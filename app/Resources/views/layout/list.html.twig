@@ -1,0 +1,17 @@
+{% extends "layout/layout.html.twig" %}
+
+{% block maincontent %}
+    {% for message in app.flashes("success") %}
+        <div class="alert alert-success">{{ message }}</div>
+    {% endfor %}
+    {% if app.user %}
+        <h1>Hello {{ app.user.pseudo }}!</h1>
+    {% endif %}
+    <ul>
+        {% for idea in ideas %}
+            <h3>
+                <a href="{{ path('idea_detail', {"id":idea.id}) }}">{{ idea.title }}</a>, {{ idea.category?idea.category.name:"No category" }}
+            </h3>
+        {% endfor %}
+    </ul>
+{% endblock %}

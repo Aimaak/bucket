@@ -1,0 +1,11 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block maincontent %}
+    <div class="container-fluid">
+        <div class="col-8">
+            {% form_theme form 'bootstrap_4_layout.html.twig' %}
+            {{ form(form) }}
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,7 @@
+{% extends "layout/layout.html.twig" %}
+
+{% block maincontent %}
+    {% for message in app.flashes("success") %}
+        <div class="alert alert-success">{{ message }}</div>
+    {% endfor %}
+{% endblock %}
